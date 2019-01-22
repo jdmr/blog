@@ -1,0 +1,23 @@
+baseURL = "https://davidmendoza.org/"
+languageCode = "en-us"
+title = "David Mendoza"
+theme = "ananke"
+
+[params]
+  favicon = ""
+  description = "David Mendoza's Personal Website"
+  facebook = ""
+  twitter = "https://twitter.com/jdmr"
+  instagram = ""
+  youtube = ""
+  github = "https://github.com/jdmr"
+  gitlab = ""
+  linkedin = "https://www.linkedin.com/in/jdmendoza/"
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  background_color_class = "bg-mid-gray"
+#   featured_image = "/images/gohugo-default-sample-hero-image.jpg"
+  recent_posts_number = 2
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"

@@ -2,6 +2,7 @@ baseURL = "https://davidmendoza.org/"
 languageCode = "en-us"
 title = "David Mendoza"
 theme = "ananke"
+googleAnalytics = "UA-86335397-1"
 
 [params]
   favicon = ""

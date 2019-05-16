@@ -9,9 +9,9 @@ This is a set of tutorials that I'm building to teach my son how to code (hope y
 
 In this tutorial we're going through the steps of creating a simple TODO app, but also of setting up our environment to help us make that app.
 
-Let's start by setting up our IDE. We're going to use [Visual Studio Code](https://code.visualstudio.com/) (VS Code). 
+Let's start by setting up our IDE. We're going to use [Visual Studio Code](https://code.visualstudio.com/) (VS Code).
 
-+ [Download it](https://code.visualstudio.com/) and install it. 
++ [Download it](https://code.visualstudio.com/) and install it.
 + Open it
 + Press Ctrl+Shift+P (Command+Shift+P on a Mac) to open the command palette
 + Type **_shell_** in the command palette.
@@ -150,7 +150,7 @@ When you save and look at the reloaded page on the browser you'll notice that it
 </body>
 ```
 
-Now we should be seeing something like:
+Now we should be seeing something like (please ignore that my url has an extra /todos in the URL, that's because of my setup):
 ![image alt text](/todos.jpg)
 
 It looks better but it doesn't do anything, so on part 2 we'll work on that with Javascript.

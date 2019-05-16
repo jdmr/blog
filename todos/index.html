@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODOS</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+        body {
+            background-color: #DDDDDD;
+            color: #333333;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            letter-spacing: .03em;
+        }
+        
+        div#main {
+            max-width: 400px;
+            margin: auto;
+        }
+        
+        ul#todos {
+            list-style-type: none;
+            margin: 0 0 10px 2px;
+            padding: 0;
+        }
+        
+        ul#todos>li {
+            padding: 7px 0;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            box-sizing: border-box;
+            font-size: 1em;
+            padding: 10px;
+        }
+
+        button {
+            width: 100%;
+            height: 50px;
+            margin-top: 10px;
+            font-size: 1em;
+            background-color: #888888;
+            color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>TODOS</h1>
+        <ul id="todos">
+            <li>Feed the dog</li>
+            <li>Walk the dog</li>
+            <li>Mow the lawn</li>
+            <li>Feed the chickens</li>
+            <li>Read a book</li>
+            <li>Do some exercise</li>
+        </ul>
+        <input type="text">
+        <button>Add TODO</button>
+    </div>
+</body>
+</html>

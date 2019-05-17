@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <style>
         body {
-            background-color: #DDDDDD;
+            background-color: #dddddd;
             color: #333333;
             font-family: 'Open Sans', sans-serif;
             font-size: 18px;
@@ -27,7 +27,7 @@
         }
         
         ul#todos>li {
-            padding: 7px 0;
+            padding: 7px 5px;
         }
 
         input {
@@ -46,6 +46,37 @@
             background-color: #888888;
             color: #dddddd;
         }
+
+        .selected {
+            background-color: #aaaaaa;
+            font-size: 1.2em;
+        }
+
+        #error {
+            background-color: #ed4337;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        
+        #error>p {
+            margin-bottom: 0;
+            padding: 10px 5px;
+            font-size: 0.6em;
+            color: #fafafa;
+        }
+
+        #success {
+            background-color: #4bb543;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        
+        #success>p {
+            margin-bottom: 0;
+            padding: 10px 5px;
+            font-size: 0.6em;
+            color: #fafafa;
+        }
     </style>
 </head>
 <body>
@@ -59,8 +90,55 @@
             <li>Read a book</li>
             <li>Do some exercise</li>
         </ul>
-        <input type="text">
-        <button>Add TODO</button>
+        <div id="success"></div>
+        <div id="error"></div>
+        <input type="text" id="todo">
+        <button onclick="addTodo()">Add TODO</button>
     </div>
+    <script>
+        let todo = document.getElementById("todo");
+        todo.focus();
+        todo.addEventListener("keyup", (event) => {
+            if (event.keyCode === 13) {
+                addTodo();
+            } else if (event.keyCode === 27) {
+                todo.value = '';
+            }
+        });
+        let todos = document.getElementById("todos");
+        todos.addEventListener("click", (event) => {
+            let todo = event.target;
+            todos.removeChild(todo);
+            let success = document.getElementById('success');
+            success.innerHTML = '<p>Finished <strong>' + todo.innerText + '</strong> TODO!</p>'
+            setTimeout(() => {
+                success.innerHTML = '';
+            }, 2000);
+        })
+        
+        function addTodo() {
+            let elements = todos.getElementsByTagName("li");
+            for(let li of elements) {
+                if (li.innerText === todo.value) {
+                    li.classList.add('selected');
+                    let error = document.getElementById('error');
+                    error.innerHTML = '<p>Already have that TODO in the list</p>';
+                    setTimeout(() => {
+                        li.classList.remove('selected');
+                        error.innerHTML = '';
+                    }, 2000);
+                    return;
+                }
+            }
+
+            let node = document.createElement('li');
+            let textNode = document.createTextNode(todo.value);
+            node.appendChild(textNode);
+            todos.appendChild(node);
+
+            todo.value = '';
+            todo.focus();
+        }
+    </script>
 </body>
 </html>

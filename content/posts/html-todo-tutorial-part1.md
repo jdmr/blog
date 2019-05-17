@@ -89,7 +89,7 @@ So we're inlining in the head section as this is the recommended way when your c
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <style>
         body {
-            background-color: #DDDDDD;
+            background-color: #dddddd;
             color: #333333;
             font-family: 'Open Sans', sans-serif;
             font-size: 18px;
@@ -108,7 +108,7 @@ So we're inlining in the head section as this is the recommended way when your c
         }
 
         ul#todos>li {
-            padding: 7px 0;
+            padding: 7px 5px;
         }
 
         input {
@@ -153,4 +153,4 @@ When you save and look at the reloaded page on the browser you'll notice that it
 Now we should be seeing something like (please ignore that my url has an extra /todos in the URL, that's because of my setup):
 ![image alt text](/todos.jpg)
 
-It looks better but it doesn't do anything, so on part 2 we'll work on that with Javascript.
+It looks better but it doesn't do anything, so on [part 2]({{< ref "html-todo-tutorial-part2.md" >}}) we'll work on that with Javascript.

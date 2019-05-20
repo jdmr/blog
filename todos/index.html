@@ -27,7 +27,17 @@
         }
         
         ul#todos>li {
-            padding: 7px 5px;
+            overflow: hidden;
+            height: 0;
+            margin: 0;
+            opacity: 0;
+            transition: all 0.4s ease-out;
+        }
+
+        ul#todos>li.show {
+            height: 2em;
+            margin: 2px 3px;
+            opacity: 1;
         }
 
         input {
@@ -50,32 +60,52 @@
         .selected {
             background-color: #aaaaaa;
             font-size: 1.2em;
+            padding-left: 5px;
+            padding-top: 8px;
         }
 
         #error {
             background-color: #ed4337;
-            font-size: 1.5em;
-            text-align: center;
         }
         
         #error>p {
-            margin-bottom: 0;
-            padding: 10px 5px;
-            font-size: 0.6em;
             color: #fafafa;
         }
 
         #success {
             background-color: #4bb543;
-            font-size: 1.5em;
-            text-align: center;
         }
         
         #success>p {
-            margin-bottom: 0;
-            padding: 10px 5px;
-            font-size: 0.6em;
             color: #fafafa;
+        }
+
+        .snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+        }
+
+        #error.show, #success.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
         }
     </style>
 </head>
@@ -83,17 +113,17 @@
     <div id="main">
         <h1>TODOS</h1>
         <ul id="todos">
-            <li>Feed the dog</li>
-            <li>Walk the dog</li>
-            <li>Mow the lawn</li>
-            <li>Feed the chickens</li>
-            <li>Read a book</li>
-            <li>Do some exercise</li>
+            <li class="show">Feed the dog</li>
+            <li class="show">Walk the dog</li>
+            <li class="show">Mow the lawn</li>
+            <li class="show">Feed the chickens</li>
+            <li class="show">Read a book</li>
+            <li class="show">Do some exercise</li>
         </ul>
-        <div id="success"></div>
-        <div id="error"></div>
         <input type="text" id="todo">
         <button onclick="addTodo()">Add TODO</button>
+        <div id="success" class="snackbar"></div>
+        <div id="error" class="snackbar"></div>
     </div>
     <script>
         let todo = document.getElementById("todo");
@@ -108,11 +138,15 @@
         let todos = document.getElementById("todos");
         todos.addEventListener("click", (event) => {
             let todo = event.target;
-            todos.removeChild(todo);
+            todo.classList.remove('show');
+            setTimeout(() => {
+                todos.removeChild(todo);
+            }, 500);
             let success = document.getElementById('success');
             success.innerHTML = '<p>Finished <strong>' + todo.innerText + '</strong> TODO!</p>'
+            success.classList.add('show');
             setTimeout(() => {
-                success.innerHTML = '';
+                success.classList.remove('show');
             }, 2000);
         })
         
@@ -123,9 +157,10 @@
                     li.classList.add('selected');
                     let error = document.getElementById('error');
                     error.innerHTML = '<p>Already have that TODO in the list</p>';
+                    error.classList.add('show');
                     setTimeout(() => {
                         li.classList.remove('selected');
-                        error.innerHTML = '';
+                        error.classList.remove('show');
                     }, 2000);
                     return;
                 }
@@ -135,6 +170,9 @@
             let textNode = document.createTextNode(todo.value);
             node.appendChild(textNode);
             todos.appendChild(node);
+            setTimeout(() => {
+                node.classList.add('show')
+            }, 10);
 
             todo.value = '';
             todo.focus();

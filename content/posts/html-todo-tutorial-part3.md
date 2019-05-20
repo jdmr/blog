@@ -210,4 +210,4 @@ And that's it. Here's the final version:
 
 {{< gist jdmr c085fcc27871243c4a04bb343fc9d30b >}}
 
-As you might notice in this final version the HTML part is rather small and the CSS and JavaScript are getting bigger and bigger. It's time to put them in different files and manage them. We'll start by putting them in different files, but then we'll transition into a tool that's used to optimize our HTML, CSS and JavaScript code called Webpack.
+As you might notice in this final version, the HTML part is rather small and the CSS and JavaScript are getting rather big. It's time to put them in different files and to manage them.

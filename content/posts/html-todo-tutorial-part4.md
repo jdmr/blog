@@ -8,7 +8,7 @@ tags: [html, css, javascript]
 
 Welcome to our fourth part of this tutorial.
 
-In [part 1]({{< ref "html-todo-tutorial-part1.md" >}}) we setup our environment and start building with just HTML and CSS. On [part 2]({{< ref "html-todo-tutorial-part2.md" >}}) we start using JavaScript and make our app functional. On [part 3]({{< ref "html-todo-tutorial-part3.md" >}}) we introduce CSS Transitions and Animation. On part 4 we're going to introduce Webpack, but before we do that we'll first put the CSS and JavaScript into separate files and reference them from our index.html.
+In [part 1]({{< ref "html-todo-tutorial-part1.md" >}}) we setup our environment and start building with just HTML and CSS. On [part 2]({{< ref "html-todo-tutorial-part2.md" >}}) we start using JavaScript and make our app functional. On [part 3]({{< ref "html-todo-tutorial-part3.md" >}}) we introduce CSS Transitions and Animation. On part 4 we're going to introduce ParcelJS, but before we do that we'll first put the CSS and JavaScript into separate files and reference them from our index.html.
 
 First we create a new file called index.css and copy everything inside the **style** tags and paste it in that file:
 

@@ -210,4 +210,4 @@ And that's it. Here's the final version:
 
 {{< gist jdmr c085fcc27871243c4a04bb343fc9d30b >}}
 
-As you might notice in this final version, the HTML part is rather small and the CSS and JavaScript are getting rather big. It's time to put them in different files and to manage them.
+As you might notice in this final version, the HTML part is rather small and the CSS and JavaScript are getting rather big. It's time to put them in different files and to manage them. We'll do this in our [next post]({{< ref "html-todo-tutorial-part4.md" >}}) and also introduce [NodeJS](https://nodejs.org) and [ParcelJS](https://parceljs.org).

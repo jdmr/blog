@@ -274,7 +274,7 @@ Create a file named **.browserslistrc** with the following content:
 last 2 versions
 ```
 
-And create a file named **.postcssrc with the following content:
+And create a file named **.postcssrc** with the following content:
 
 ```text
 {

@@ -134,6 +134,7 @@ nmcli> set 802-1x.phase2-auth mschapv2
 nmcli> set 802-1x.identity myusername
 nmcli> set 802-1x.password mypassword
 nmcli> set wifi-sec.key-mgmt wpa-eap
+nmcli> save
 nmcli> activate
 nmcli> save
 nmcli> quit
@@ -155,7 +156,7 @@ Modify file to look like this:
 ```bash
 [Service]
 ExecStart=
-ExecStart=-/usr/bin/agetty --nia username --noclear %I $TERM
+ExecStart=-/usr/bin/agetty -nia username --noclear %I $TERM
 ```
 Remove the tty info for auto-login
 ```bash

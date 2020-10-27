@@ -199,7 +199,7 @@ Done!
 exit
 reboot
 ```
-Thanks to all these posts for helping me out:
+Thanks to all these people for helping me out:
 + [https://marvintan.com/posts/arch-linux-installation-guide-part-1/](https://marvintan.com/posts/arch-linux-installation-guide-part-1/)
 + [https://wiki.learnlinux.tv/index.php/How_to_Install_Arch_Linux](https://wiki.learnlinux.tv/index.php/How_to_Install_Arch_Linux)
 + [https://itsfoss.com/install-arch-linux/](https://itsfoss.com/install-arch-linux/)

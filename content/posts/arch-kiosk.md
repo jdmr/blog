@@ -112,8 +112,8 @@ systemctl enable docker
 ```
 Add a user and set the user's password:
 ```bash
-useradd -m -g users -G wheel,docker,audio,video,storage tv-user
-passwd tv-user
+useradd -m -g users -G wheel,docker,audio,video,storage username
+passwd username
 ```
 Create swap:
 ```bash
